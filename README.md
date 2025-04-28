@@ -18,5 +18,6 @@ This project is part of the ITI Tailwind course, showcasing the use of TailwindC
 - **HTML5**: For the basic structure of the website.
 - **TailwindCSS**: For responsive, utility-first styling.
 - **JavaScript**: For interactive elements (theme toggle and dynamic content).
+![image](https://github.com/user-attachments/assets/2d282bdd-65c4-4f4a-8f28-83bdd7e96f30)
 
 
