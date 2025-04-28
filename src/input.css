@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Default (Light Mode) */
+.body-theme {
+  @apply bg-gradient-to-r from-indigo-50 from-10% via-sky-50 via-50% to-indigo-50 to-80%
+  min-h-screen flex flex-col items-center transition-all duration-300;
+}
+
+/* Dark Mode */
+.dark .body-theme {
+  @apply bg-gradient-to-r from-gray-950 from-5% via-indigo-900 via-50% to-gray-950 to-90%;
+}
+.main-text-color {
+  @apply text-indigo-600 dark:text-white;
+}
+.primary-text-color {
+  @apply text-gray-600 dark:text-white;
+}
+.main-bg-color {
+  @apply bg-indigo-600 dark:bg-gray-700;
+}
+.links-item {
+  @apply font-semibold  text-black hover:text-gray-500 dark:text-white dark:hover:text-sky-200;
+}
+.primary-btn {
+  @apply bg-indigo-600 hover:bg-indigo-800 text-white rounded-lg cursor-pointer;
+}
+
+.secondary-btn {
+  @apply border border-gray-400 rounded-lg cursor-pointer font-semibold dark:text-white;
+}
+.secondary-txt {
+  @apply text-gray-600 text-lg text-base/7  dark:text-indigo-200;
+}
+
+/* pricing list section */
+.pricing-container {
+  @apply mx-auto max-w-7xl px-4 lg:px-8;
+}
+/* Pricing Table  */
+.pricing-table {
+  @apply mx-auto mt-20 rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 flex flex-col lg:flex-row;
+}
+.dark .pricing-table {
+  @apply bg-gray-900 text-white;
+}
+.price-list {
+  @apply mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-700 sm:grid-cols-2 sm:gap-6;
+}
+
+.left-pricing-sec {
+  @apply p-6 sm:p-10 lg:p-12 lg:w-[70%] text-left;
+}
+.right-pricing-sec {
+  @apply p-6 sm:p-10 lg:p-12 lg:w-[30%];
+}
+.pricing-box {
+  @apply rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16 dark:bg-gray-700;
+}
+
+/* Features Section */
+.feature-item {
+  @apply flex items-start space-x-4;
+}
+
+/* Contact Us Section */
+.contact-container {
+  @apply relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32;
+}
+
+/* Footer Section */
+.footer-text {
+  @apply text-gray-200 text-sm font-medium hover:text-indigo-600;
+}
