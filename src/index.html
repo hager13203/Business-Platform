@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html class="dark">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
+    <title>Business Platform — Data to enrich your online business</title>
+    <style>
+   
+
+      /* Make focused interactive elements clearly visible (WCAG keyboard focus) */
+      a:focus, button:focus, input:focus, [role="button"]:focus {
+        outline: 1px solid #779cec; 
+      }
+    </style>
   </head>
   <body class="body-theme">
     <div>
       <!-- Navigation -->
-      <nav class="p-6 w-full relative transition-all duration-300">
+       <header >
+          <nav  aria-label="Main Navigation" class="p-6 w-full relative transition-all duration-300">
         <div class="max-w-6xl mx-auto flex items-center justify-between mt-4">
           <!-- Mobile Menu (Hidden by Default) -->
           <ul
             id="mobile-menu"
             class="hidden flex flex-col bg-indigo-200 text-indigo-800 w-full absolute top-19 left-0 gap-4 p-8 shadow-md md:hidden items-center dark:bg-gray-900 dark:text-white"
+            aria-hidden="true"
           >
             <li><a href="#" class="links-item transition">Product</a></li>
             <li><a href="#" class="links-item transition">Features</a></li>
@@ -29,7 +40,7 @@
           </ul>
           <!-- Menu Icon (Visible on Mobile) -->
 
-          <button id="menu-btn" class="md:hidden focus:outline-none">
+          <button type="button" id="menu-btn" class="md:hidden focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu">
             <svg
               class="w-8 h-8 text-gray-800 dark:text-white cursor-pointer"
               xmlns="http://www.w3.org/2000/svg"
@@ -55,17 +66,16 @@
           >
 
           <!-- Dark/Light Mode Toggle -->
-          <div class="relative w-8 h-8 ml-auto">
+          <button type="button" id="theme-toggle" class="relative w-8 h-8 ml-auto focus:outline-none" aria-pressed="false" aria-label="Toggle dark mode">
             <svg
               class="w-8 h-8 absolute right-0 text-indigo-700 dark:text-white transition"
               id="dark-mode"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 384 512"
               fill="currentColor"
+              aria-hidden="true"
             >
-              <path
-                d="M223.5 32C100 32 0 132.3 0 256s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"
-              />
+              <path d="M223.5 32C100 32 0 132.3 0 256s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/>
             </svg>
 
             <svg
@@ -74,20 +84,21 @@
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
               fill="currentColor"
+              aria-hidden="true"
             >
-              <path
-                d="M375.7 19.7c-1.5-8-6.9-14.7-14.4-17.8s-16.1-2.2-22.8 2.4L256 61.1 173.5 4.2c-6.7-4.6-15.3-5.5-22.8-2.4s-12.9 9.8-14.4 17.8l-18.1 98.5L19.7 136.3c-8 1.5-14.7 6.9-17.8 14.4s-2.2 16.1 2.4 22.8L61.1 256 4.2 338.5c-4.6 6.7-5.5 15.3-2.4 22.8s9.8 13 17.8 14.4l98.5 18.1 18.1 98.5c1.5 8 6.9 14.7 14.4 17.8s16.1 2.2 22.8-2.4L256 450.9l82.5 56.9c6.7 4.6 15.3 5.5 22.8 2.4s12.9-9.8 14.4-17.8l18.1-98.5 98.5-18.1c8-1.5 14.7-6.9 17.8-14.4s2.2-16.1-2.4-22.8L450.9 256l56.9-82.5c4.6-6.7 5.5-15.3 2.4-22.8s-9.8-12.9-17.8-14.4l-98.5-18.1L375.7 19.7z"
-              />
+              <path d="M375.7 19.7c-1.5-8-6.9-14.7-14.4-17.8s-16.1-2.2-22.8 2.4L256 61.1 173.5 4.2c-6.7-4.6-15.3-5.5-22.8-2.4s-12.9 9.8-14.4 17.8l-18.1 98.5L19.7 136.3c-8 1.5-14.7 6.9-17.8 14.4s-2.2 16.1 2.4 22.8L61.1 256 4.2 338.5c-4.6 6.7-5.5 15.3-2.4 22.8s9.8 13 17.8 14.4l98.5 18.1 18.1 98.5c1.5 8 6.9 14.7 14.4 17.8s16.1 2.2 22.8-2.4L256 450.9l82.5 56.9c6.7 4.6 15.3 5.5 22.8 2.4s12.9-9.8 14.4-17.8l18.1-98.5 98.5-18.1c8-1.5 14.7-6.9 17.8-14.4s2.2-16.1-2.4-22.8L450.9 256l56.9-82.5c4.6-6.7 5.5-15.3 2.4-22.8s-9.8-12.9-17.8-14.4l-98.5-18.1L375.7 19.7z"/>
             </svg>
-          </div>
+          </button>
         </div>
       </nav>
+       </header>
+    
 
       <!-- Main Content -->
-      <div
+      <main id="main-content"
         class="flex flex-col items-center justify-center text-center flex-grow p-4 mt-32"
       >
-        <button
+        <button type="button"
           class="font-light border border-gray-300 rounded-full px-4 py-2 mb-6 dark:text-white"
         >
           Announcing our next round of funding.
@@ -101,8 +112,8 @@
           exercitationem, quam velit voluptates explicabo magnam .
         </p>
         <div class="flex flex-wrap justify-center gap-6 mt-6">
-          <button class="w-40 px-6 py-3 primary-btn">Get started</button>
-          <button class="w-40 px-6 py-3 secondary-btn">Learn More →</button>
+          <button type="button" class="w-40 px-6 py-3 primary-btn">Get started</button>
+          <button type="button" class="w-40 px-6 py-3 secondary-btn">Learn More →</button>
         </div>
         <!-- Pricing List Section -->
         <div class="py-12 mt-[85px]">
@@ -193,7 +204,7 @@
                 </ul>
               </div>
               <!-- Right section -->
-              <div class="right-pricing-sec">
+              <section class="right-pricing-sec">
                 <div class="pricing-box dark:bg-gray-700">
                   <div class="mx-auto max-w-xs px-8">
                     <p class="text-base font-semibold text-gray-700">
@@ -224,14 +235,14 @@
                     </p>
                   </div>
                 </div>
-              </div>
+              </section>
             </div>
           </div>
 
           <!-- Features Section -->
           <section class="py-20 text-center">
             <!-- Title Section -->
-            <h3 class="main-text-color font-semibold">Deploy faster</h3>
+            <p class="main-text-color font-semibold">Deploy faster</p>
             <h2 class="text-3xl font-bold mt-2 dark:text-white">
               Everything you need to deploy your app
             </h2>
@@ -351,10 +362,10 @@
           </section>
 
           <!-- Contact Us Section -->
-          <div class="contact-container">
+          <section class="contact-container">
             <img
               src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
-              alt=""
+alt="People collaborating in a modern office"
               class="absolute inset-0 -z-10 size-full object-cover object-right md:object-center"
             />
             <div
@@ -487,7 +498,7 @@
                 </dl>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </div>
       <!-- Footer Section -->
@@ -509,38 +520,55 @@
     </div>
 
     <script>
-      // Menu button toggling
-      document
-        .getElementById("menu-btn")
-        .addEventListener("click", function () {
-          document.getElementById("mobile-menu").classList.toggle("hidden");
-        });
+      // Accessibility-aware menu and theme toggling
+      (function () {
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
 
-      const darkModeIcon = document.getElementById("dark-mode");
-      const lightModeIcon = document.getElementById("light-mode");
+        if (menuBtn && mobileMenu) {
+          // ensure initial ARIA values exist
+          if (!menuBtn.hasAttribute("aria-expanded")) menuBtn.setAttribute("aria-expanded", "false");
+          mobileMenu.setAttribute("aria-hidden", "true");
 
-      function theme(mode) {
-        document.documentElement.classList.toggle("dark");
+          menuBtn.addEventListener("click", function () {
+            const wasExpanded = this.getAttribute("aria-expanded") === "true";
+            const nowExpanded = !wasExpanded;
+            this.setAttribute("aria-expanded", String(nowExpanded));
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.setAttribute("aria-hidden", String(!nowExpanded));
 
-        // Check if dark mode is applied
-        if (document.documentElement.classList.contains("dark")) {
-          console.log("Dark mode activated");
-        } else {
-          console.log("Light mode activated");
+            // Move focus into the menu when opening for keyboard users
+            if (nowExpanded) {
+              const firstLink = mobileMenu.querySelector("a, button, [tabindex]:not([tabindex='-1'])");
+              if (firstLink) firstLink.focus();
+            }
+          });
         }
 
-        if (mode === "light") {
-          lightModeIcon.classList.remove("hidden");
-          darkModeIcon.classList.add("hidden");
-        } else {
-          darkModeIcon.classList.remove("hidden");
-          lightModeIcon.classList.add("hidden");
-        }
-      }
+        const themeToggle = document.getElementById("theme-toggle");
+        const darkModeIcon = document.getElementById("dark-mode");
+        const lightModeIcon = document.getElementById("light-mode");
 
-      // Event listeners to toggle dark mode
-      darkModeIcon.addEventListener("click", () => theme("dark"));
-      lightModeIcon.addEventListener("click", () => theme("light"));
+        function updateThemeIcons(isDark) {
+          if (darkModeIcon) darkModeIcon.classList.toggle("hidden", !isDark);
+          if (lightModeIcon) lightModeIcon.classList.toggle("hidden", isDark);
+        }
+
+        if (themeToggle) {
+          // initialize
+          const isDark = document.documentElement.classList.contains("dark");
+          themeToggle.setAttribute("aria-pressed", String(isDark));
+          updateThemeIcons(isDark);
+
+          themeToggle.addEventListener("click", function () {
+            const pressed = this.getAttribute("aria-pressed") === "true";
+            const nowPressed = !pressed;
+            this.setAttribute("aria-pressed", String(nowPressed));
+            document.documentElement.classList.toggle("dark");
+            updateThemeIcons(nowPressed);
+          });
+        }
+      })();
     </script>
   </body>
 </html>
